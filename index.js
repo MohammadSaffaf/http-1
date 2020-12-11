@@ -3,26 +3,14 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 
- const server= http.createServer((req, res) =>{
-    // console.log(req);
-    console.log(req.url);
-//     if (req.url === '/'){
-//         fs.readFile('./public/index.html' , (err,data) =>{
-//             if (err) throw err
-//             res.writeHead(200, { 'Content-type' : 'text/html'})
-//             // res.write(data)
-//             res.end(data)
-//         })
-//     }else if (req.url ==='/about'){
-//         fs.readFile('./public/about.html' , (err,data) =>{
-//             if (err) throw err
-//             res.writeHead(200, { 'Content-type' : 'text/html'})
-//             // res.write(data)
-//             res.end(data)
 
-//     })
-// }
+ const server= http.createServer((req, res) =>{
+    
+    console.log(req.url);
+
 let filePath = path.join(__dirname, 'public', req.url === '/' ? 'Home.html' :req.url)
+
+
 console.log(filePath);
 let extname = path.extname(filePath)
 console.log(extname);
@@ -73,4 +61,4 @@ fs.readFile(filePath, (err,data) => {
 
 
 
-server.listen(5000, ()=>console.log("Server running...on:http://http://localhost:5000"))
+server.listen(8000, ()=>console.log("Server running...on:http://http://localhost:8000"))
